@@ -6,6 +6,7 @@
 <?php 
 //session_start();
  $message = $this->session->userdata('message');
+ $message1 = $this->session->userdata('message1');
  $id = $this->session->userdata('userid');
 
 if(isset($id) && $id!="")
@@ -120,12 +121,23 @@ if(isset($id) && $id!="")
             
              <?php
            // if(isset($_SESSION['message']) && $_SESSION['message']!="")
-           if(isset($message1) && $message1!="")
+ 
+           // if(isset($_SESSION['message']) && $_SESSION['message']!="")
+           if(isset($message) && $message!="")
             {
             ?>
-            <div id="resultblock" class="notification success hideit" style="margin-top:100px;margin-left:220px;"><strong>SUCCESS: </strong><?php  echo $message1; ?></div>
+            <div id="resultblock" class="notification success hideit" style="margin-top:100px;margin-left:220px;"><strong> <?php  echo $message; ?></strong></div>
            <?php } 
-           $this->session->unset_userdata('message1');?>
+          
+
+          else if(isset($message1) && $message1!="")
+            {
+            ?>
+            <div id="resultblock" class="notification success hideit" style="margin-top:100px;margin-left:220px;"><strong> <?php  echo $message1; ?></strong></div>
+           <?php } 
+           $this->session->unset_userdata('message1');
+            $this->session->unset_userdata('message');
+            ?>
            
            <div class="animated fadeIn">
                 <div class="row">
@@ -149,7 +161,7 @@ if(isset($id) && $id!="")
    
     </div>
     <div class="form-group">Email
-    <input type="email" id="email" name="email" placeholder="Email..." class="form-control" required>
+    <input type="text" id="email" name="email" placeholder="Email..." class="form-control" required>
    
     </div>
      <div class="form-group"> Grade
