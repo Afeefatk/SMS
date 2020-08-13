@@ -149,7 +149,7 @@ if(isset($id) && $id!="")
    
     </div>
     <div class="form-group">Email
-    <input type="text" id="email" name="email" placeholder="Email..." class="form-control" required>
+    <input type="email" id="email" name="email" placeholder="Email..." class="form-control" required>
    
     </div>
      <div class="form-group"> Grade
