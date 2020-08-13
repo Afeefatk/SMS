@@ -107,9 +107,26 @@ else
 
     function updaterecords($data)
   {
+      
+$email =  $this->input->post('email');
+
+       $query =$this->db->get_where('tbl_student', array('email' => $email));
+//echo $this->db->last_query();
+if($query->num_rows() > 0)
+{
+echo "Email already exists";
+ $message="Email already exists";
+           $this->session->set_userdata('message', $message);
+}
+else
+{
+
       $row_id= $this->input->post('row_id');
             $this->db->where('id', $row_id);
         $query = $this->db->update('tbl_student', $data);
+         $message1="Data inserted successfully";
+           $this->session->set_userdata('message1', $message1);
+      }
   }
     
  function editstudent() {
