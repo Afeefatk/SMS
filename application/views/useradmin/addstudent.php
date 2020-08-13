@@ -159,7 +159,7 @@ if(isset($id) && $id!="")
    
     </div>
     <div class="form-group"><label for="nf-email" class=" form-control-label">Email</label>
-    <input type="text" id="UserEmail" name="email" placeholder="Email..." onkeyup="checkemail();" class="form-control" required>
+    <input type="email" id="UserEmail" name="email" placeholder="Email..." onkeyup="checkemail();" class="form-control" required>
    <span id="email_status"></span>
     </div>
     <div class="ajax_response_result"></div>
