@@ -128,8 +128,8 @@ $check = $this->useradmin_model->checkemail($email);
             }
      }
        // $this->load->view('useradmin/addstudent');
-      $message="Data inserted successfully";
-           $this->session->set_userdata('message', $message);
+      // $message="Data inserted successfully";
+      //      $this->session->set_userdata('message', $message);
      redirect('useradmin/studentlist');
  }
 
